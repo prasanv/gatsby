@@ -38,6 +38,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "assets",
+        path: "./src/assets/",
+      },
+      __key: "assets",
+    },
     // {
     //   resolve: "gatsby-plugin-google-analytics",
     //   options: {
