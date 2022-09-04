@@ -1,7 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `gatsby`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Prasan gatsby`,
+    description: `prasan gatsby playground`,
+    author: `prasan`,
+    siteUrl: `https://www.yourdomain.com`,
+    location: { province: "BC" },
+    simpleData: ["vancouver", "burnaby", "port coquitlam"],
+    complexData: [
+      { site: "stanley park", city: "Vancouver" },
+      { site: "suspension bridge", city: "North Vancouver", status: "closed" },
+    ],
   },
   plugins: [
     {
