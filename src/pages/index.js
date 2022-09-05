@@ -1,23 +1,28 @@
 import * as React from "react";
 import * as containerStyles from "../styles/index.module.css";
 import Layout from "../components/Layout";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 const IndexPage = () => {
-  console.log(containerStyles);
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulRecipes {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+
   return (
     <main className={containerStyles.pageStyles}>
       <Layout>
-        <h1 className={containerStyles.headingStyles}>
-          Congratulations
-          <br />
-          <span className={containerStyles.headingAccentStyles}>
-            — you just made a Gatsby site! 🎉🎉🎉
-          </span>
-        </h1>
         <p className={containerStyles.paragraphStyles}>
-          Edit{" "}
-          <code className={containerStyles.codeStyles}>src/pages/index.js</code>{" "}
-          to see this page update in real-time. 😎
+          {data.allContentfulRecipes.nodes.map((item, index) => (
+            <li key={index}>
+              <Link to={`/example/${item.slug}`}>{item.slug}</Link>
+            </li>
+          ))}
         </p>
       </Layout>
     </main>

@@ -1,9 +1,12 @@
+import { Link } from "gatsby";
 import React from "react";
 
 const Header = () => {
   return (
     <div>
-      <h2>Header Component</h2>
+      <h2>
+        <Link to="/">Recipes Home</Link>
+      </h2>
     </div>
   );
 };
