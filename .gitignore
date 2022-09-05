@@ -3,3 +3,5 @@ node_modules/
 public
 settings.json
 .DS_Store
+.env.development
+.env.production
