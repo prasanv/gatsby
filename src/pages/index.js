@@ -42,10 +42,20 @@ const IndexPage = () => {
       </div>
       <div>
         <h4>File System Route API Example</h4>
-        <p className={containerStyles.paragraphStyles}>
+        <p>
           {data.allContentfulRecipes.nodes.map((item, index) => (
             <li key={index}>
               <Link to={`/example/${item.slug}`}>{item.slug}</Link>
+            </li>
+          ))}
+        </p>
+      </div>
+      <div>
+        <h4>Gatsby Node API - createPages</h4>
+        <p>
+          {data.allContentfulRecipes.nodes.map((item, index) => (
+            <li key={index}>
+              <Link to={`/template/${item.slug}`}>{item.slug}</Link>
             </li>
           ))}
         </p>
