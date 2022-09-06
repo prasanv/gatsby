@@ -38,7 +38,7 @@ const IndexPage = () => {
       </div>
       <div>
         <h4>Contentful data fetching Example</h4>
-        <Link to="example/6-Contentful-data">6-Contentful-data</Link>
+        <Link to="example/6-contentful-data">6-Contentful-data</Link>
       </div>
       <div>
         <h4>File System Route API Example</h4>
