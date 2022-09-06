@@ -2,15 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-/*
-  IMPORTANT NOTE: 
-  - File System Route API
-  - File name `{ContentfulRecipes.title}` corresponds to the GraphQL `allContentfulRecipes { nodes { title } }` we are just ignoring the `all` prefix t and the `nodes` here
-  - Sample title name in contentful `Fish Fry` but gatsby slugify the page url auto magically
-  - Since the page is set based on the title the gatsby auto magically detects that if you pass in query variable `($title: String)` 
-*/
-
-const RecipesDynamicRoute = ({ data }) => {
+const RecipesTemplate = ({ data }) => {
   const recipe = data.allContentfulRecipes.nodes[0];
   const image = getImage(recipe.recipeImage.gatsbyImageData);
   // console.log(recipe);
@@ -25,8 +17,8 @@ const RecipesDynamicRoute = ({ data }) => {
 };
 
 export const query = graphql`
-  query ($title: String) {
-    allContentfulRecipes(filter: { title: { eq: $title } }) {
+  query ($slug: String) {
+    allContentfulRecipes(filter: { slug: { eq: $slug } }) {
       nodes {
         title
         describe {
@@ -49,4 +41,4 @@ export const query = graphql`
   }
 `;
 
-export default RecipesDynamicRoute;
+export default RecipesTemplate;

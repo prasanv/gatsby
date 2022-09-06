@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Prasan gatsby`,
+    title: `Gatsby Project`,
     description: `prasan gatsby playground`,
     author: `prasan`,
     siteUrl: `https://www.yourdomain.com`,
@@ -16,12 +16,17 @@ module.exports = {
     ],
   },
   plugins: [
-    "gatsby-plugin-layout",
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout.js`),
+      },
+    },
     {
       resolve: "gatsby-source-contentful",
       options: {
