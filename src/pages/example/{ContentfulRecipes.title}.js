@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 
 /*
   IMPORTANT NOTE: 
+  - File System Route API
   - File name `{ContentfulRecipes.title}` corresponds to the GraphQL `allContentfulRecipes { nodes { title } }` we are just ignoring the `all` prefix t and the `nodes` here
   - Sample title name in contentful `Fish Fry` but gatsby slugify the page url auto magically
   - Since the page is set based on the title the gatsby auto magically detects that if you pass in query variable `($title: String)` 

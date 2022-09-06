@@ -16,22 +16,17 @@ module.exports = {
     ],
   },
   plugins: [
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN,
-      },
-    },
+    "gatsby-plugin-layout",
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: "gatsby-source-contentful",
       options: {
-        icon: "src/images/icon.png",
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.ACCESS_TOKEN,
       },
     },
     {
@@ -49,6 +44,12 @@ module.exports = {
         path: "./src/assets/",
       },
       __key: "assets",
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
+      },
     },
     // {
     //   resolve: "gatsby-plugin-google-analytics",

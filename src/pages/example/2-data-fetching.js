@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { GlobalSEO } from "../../components/SEO";
 
 const getData = graphql`
   query {
@@ -47,3 +48,11 @@ const DataFetching_2 = () => {
 };
 
 export default DataFetching_2;
+
+export const Head = () => (
+  <>
+    <GlobalSEO title="DataFetching_2">
+      <meta name="description" content="2 Data Fetching Example" />
+    </GlobalSEO>
+  </>
+);

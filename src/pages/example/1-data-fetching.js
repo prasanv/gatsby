@@ -26,3 +26,6 @@ const DataFetching_1 = () => {
 };
 
 export default DataFetching_1;
+
+// Note: This pulls all SEO meta tags from index page
+export { Head } from "../index";

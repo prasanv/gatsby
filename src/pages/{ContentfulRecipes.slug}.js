@@ -1,7 +1,7 @@
 import React from "react";
 
 /*
-  IMPORTANT NOTE: File name `{ContentfulRecipes.title}` corresponds to the GraphQL `allContentfulRecipes { nodes { title } }` we are just ignoring the `all` prefix t and the `nodes` here
+  IMPORTANT NOTE: File name `{ContentfulRecipes.slug}` corresponds to the GraphQL `allContentfulRecipes { nodes { slug } }` we are just ignoring the `all` prefix and the `nodes` here
 */
 
 const RecipeTemplate = (props) => {
